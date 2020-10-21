@@ -2,6 +2,7 @@
 const Hapi = require('@hapi/hapi');
 const rot13 = require('rot13-transform');
 const fs = require('fs');
+const path = require('path');
 (async()=> {
   try {
     const server = Hapi.Server({
@@ -12,7 +13,7 @@ const fs = require('fs');
       path: '/',
       method: 'GET',
       handler: (req, h) => {
-        const readStream = fs.createReadStream('rot13')
+        const readStream = fs.createReadStream(path.join(__dirname, 'inputfile.txt'))
         return readStream.pipe(rot13())
       }
     })
