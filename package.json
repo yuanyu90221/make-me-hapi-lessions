@@ -12,6 +12,7 @@
   "dependencies": {
     "@hapi/hapi": "^20.0.1",
     "@hapi/inert": "^6.0.3",
+    "h2o2": "^8.2.0",
     "handlebars": "^4.7.6",
     "vision": "^5.4.4"
   }
